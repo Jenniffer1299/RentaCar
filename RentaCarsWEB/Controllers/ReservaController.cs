@@ -53,17 +53,17 @@ namespace RentaCarsWEB.Controllers
         // GET: Reserva/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(VBL.FindVehiculo(id));
+            return View(BL.FindReserva(id));
         }
 
         // POST: Reserva/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Vehiculo re)
+        public ActionResult Edit(int id, Reserva re)
         {
             try
             {
                 // TODO: Add update logic here
-                VBL.InserVehiculo(re);
+                BL.UpdateReserva(re);
                 return RedirectToAction("Index");
             }
             catch
